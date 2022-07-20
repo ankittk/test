@@ -2,9 +2,8 @@ package test
 
 import (
 	"context"
-	"encoding/json"
 
-	"strings"
+	"encoding/json"
 
 	"time"
 
@@ -44,32 +43,19 @@ func initClusterCache() error {
 	defer cancel()
 	err = clusters.Init(ctx)
 	if err != nil {
-		if strings.Contains(err.Error(), "could not find default credentials") {
-			return werror.Wrap(gcloud.ErrNoGoogleApplicationCredentialsFound, err.Error())
-		}
 
 		return werror.Wrap(err, "failed to initialize cluster cache")
-	}
-
-	err = writeCache(clustersFile, clusters.FromCache())
-	if err != nil {
-		return werror.Wrap(err, "failed to write clusters cache file")
 	}
 
 	return nil
 }
 
 func checkClusterCache() (clusterCache map[string]resource.Cluster, shouldUpdate bool, _ error) {
-	buffer, shouldUpdate, err := checkCache(clustersFile)
-	if err != nil {
-		return nil, true, werror.Wrap(err, "unable to check cluster cache")
-	}
-
 	if shouldUpdate {
 		return nil, true, nil
 	}
 
-	err = json.Unmarshal(buffer, &clusterCache)
+	err := json.Unmarshal(nil, &clusterCache)
 	if err != nil {
 		return clusterCache, true, werror.Wrap(err, "failed to unmarshal ~/.bart/clusters cache file")
 	}
