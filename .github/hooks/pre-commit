@@ -5,7 +5,6 @@ STAGED_GO_FILES=$(git diff --cached --name-only -- '*.go')
 if [[ ${STAGED_GO_FILES} == "" ]]; then
     echo "No Go Files to analyse."
 else
-    which goimports-reviser || (brew tap incu6us/homebrew-tap && brew install incu6us/homebrew-tap/goimports-reviser)
 	echo "$STAGED_GO_FILES" | while read -r file; do
         if [[ -f "$file" ]] ;
         then

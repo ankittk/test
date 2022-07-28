@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"weavelab.xyz/deployer-resource-sync/pkg/resource"
-	
 	"weavelab.xyz/monorail/shared/wlib/werror"
 
 	"weavelab.xyz/wstore/pkg/clusters"
