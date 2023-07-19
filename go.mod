@@ -1,97 +1,105 @@
-module weavelab.xyz/test
-
-go 1.18
-
-require (
-	weavelab.xyz/deployer-resource-sync v0.0.0-20220623214557-51492a8d95a4
-	weavelab.xyz/monorail v1.1.56
-	weavelab.xyz/wstore v0.0.0-20220610055135-da2b67639ab7
-)
-
-require (
-	cloud.google.com/go v0.100.2 // indirect
-	cloud.google.com/go/compute v1.2.0 // indirect
-	cloud.google.com/go/firestore v1.6.0 // indirect
-	cloud.google.com/go/iam v0.1.1 // indirect
-	cloud.google.com/go/storage v1.10.0 // indirect
-	firebase.google.com/go v3.13.0+incompatible // indirect
-	github.com/Masterminds/goutils v1.1.1 // indirect
-	github.com/Masterminds/semver v1.5.0 // indirect
-	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
-	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
-	github.com/avast/retry-go/v4 v4.0.3 // indirect
-	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
-	github.com/go-logr/logr v0.2.0 // indirect
-	github.com/go-openapi/errors v0.19.4 // indirect
-	github.com/go-openapi/strfmt v0.19.5 // indirect
-	github.com/go-stack/stack v1.8.0 // indirect
-	github.com/gobwas/glob v0.2.3 // indirect
-	github.com/goccy/go-json v0.9.4 // indirect
-	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/go-cmp v0.5.7 // indirect
-	github.com/google/gofuzz v1.1.0 // indirect
-	github.com/google/uuid v1.3.0 // indirect
-	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
-	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0 // indirect
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.4.0 // indirect
-	github.com/huandu/xstrings v1.3.2 // indirect
-	github.com/hydronica/toml v0.5.0 // indirect
-	github.com/iancoleman/strcase v0.2.0 // indirect
-	github.com/imdario/mergo v0.3.12 // indirect
-	github.com/json-iterator/go v1.1.10 // indirect
-	github.com/lestrrat-go/backoff/v2 v2.0.8 // indirect
-	github.com/lestrrat-go/blackmagic v1.0.0 // indirect
-	github.com/lestrrat-go/httpcc v1.0.0 // indirect
-	github.com/lestrrat-go/iter v1.0.1 // indirect
-	github.com/lestrrat-go/jwx v1.2.18 // indirect
-	github.com/lestrrat-go/option v1.0.0 // indirect
-	github.com/mattn/go-colorable v0.1.12 // indirect
-	github.com/mattn/go-isatty v0.0.14 // indirect
-	github.com/mattn/go-runewidth v0.0.3 // indirect
-	github.com/mitchellh/copystructure v1.2.0 // indirect
-	github.com/mitchellh/mapstructure v1.4.1 // indirect
-	github.com/mitchellh/reflectwalk v1.0.2 // indirect
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
-	github.com/nsqio/go-nsq v1.1.0 // indirect
-	github.com/okta/okta-jwt-verifier-golang v1.1.1 // indirect
-	github.com/opentracing-contrib/go-stdlib v1.0.0 // indirect
-	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/patrickmn/go-cache v2.1.1-0.20180815053127-5633e0862627+incompatible // indirect
-	github.com/pcelvng/go-config v0.6.0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/robfig/cron/v3 v3.0.0 // indirect
-	github.com/uber/jaeger-client-go v2.30.0+incompatible // indirect
-	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
-	go.mongodb.org/mongo-driver v1.3.2 // indirect
-	go.opencensus.io v0.23.0 // indirect
-	go.uber.org/atomic v1.9.0 // indirect
-	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
-	golang.org/x/mod v0.5.0 // indirect
-	golang.org/x/net v0.0.0-20220607020251-c690dde0001d // indirect
-	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
-	golang.org/x/sys v0.0.0-20220608164250-635b8c9b7f68 // indirect
-	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
-	google.golang.org/api v0.68.0 // indirect
-	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220204002441-d6cc3cc0770e // indirect
-	google.golang.org/grpc v1.43.0 // indirect
-	google.golang.org/protobuf v1.28.0 // indirect
-	gopkg.in/inf.v0 v0.9.1 // indirect
-	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
-	k8s.io/api v0.20.6 // indirect
-	k8s.io/apimachinery v0.20.6 // indirect
-	k8s.io/klog/v2 v2.4.0 // indirect
-	sigs.k8s.io/structured-merge-diff/v4 v4.0.3 // indirect
-	sigs.k8s.io/yaml v1.2.1-0.20210128145534-11e43d4a8b92 // indirect
-	weavelab.xyz/devx v0.0.0-20220610053217-316acf54b86e // indirect
-	weavelab.xyz/schema-gen-go v0.0.151 // indirect
-	weavelab.xyz/waml v0.0.0-20220610050607-8c01d12109cc // indirect
-	weavelab.xyz/wlogd v0.0.0-20220407192643-87be7abbfc6a // indirect
-	weavelab.xyz/xyaml v0.0.0-20211207194231-dd5436c38481 // indirect
-)
+bW9kdWxlIHdlYXZlbGFiLnh5ei90ZXN0CgpnbyAxLjE4CgpyZXF1aXJlICgK
+CXdlYXZlbGFiLnh5ei9kZXBsb3llci1yZXNvdXJjZS1zeW5jIHYwLjAuMC0y
+MDIyMDYyMzIxNDU1Ny01MTQ5MmE4ZDk1YTQKCXdlYXZlbGFiLnh5ei9tb25v
+cmFpbCB2MS4xLjU2Cgl3ZWF2ZWxhYi54eXovd3N0b3JlIHYwLjAuMC0yMDIy
+MDYxMDA1NTEzNS1kYTJiNjc2MzlhYjcKKQoKcmVxdWlyZSAoCgljbG91ZC5n
+b29nbGUuY29tL2dvIHYwLjEwMC4yIC8vIGluZGlyZWN0CgljbG91ZC5nb29n
+bGUuY29tL2dvL2NvbXB1dGUgdjEuMi4wIC8vIGluZGlyZWN0CgljbG91ZC5n
+b29nbGUuY29tL2dvL2ZpcmVzdG9yZSB2MS42LjAgLy8gaW5kaXJlY3QKCWNs
+b3VkLmdvb2dsZS5jb20vZ28vaWFtIHYwLjEuMSAvLyBpbmRpcmVjdAoJY2xv
+dWQuZ29vZ2xlLmNvbS9nby9zdG9yYWdlIHYxLjEwLjAgLy8gaW5kaXJlY3QK
+CWZpcmViYXNlLmdvb2dsZS5jb20vZ28gdjMuMTMuMCtpbmNvbXBhdGlibGUg
+Ly8gaW5kaXJlY3QKCWdpdGh1Yi5jb20vTWFzdGVybWluZHMvZ291dGlscyB2
+MS4xLjEgLy8gaW5kaXJlY3QKCWdpdGh1Yi5jb20vTWFzdGVybWluZHMvc2Vt
+dmVyIHYxLjUuMCAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9NYXN0ZXJtaW5k
+cy9zcHJpZyB2Mi4yMi4wK2luY29tcGF0aWJsZSAvLyBpbmRpcmVjdAoJZ2l0
+aHViLmNvbS9hc2Fza2V2aWNoL2dvdmFsaWRhdG9yIHYwLjAuMC0yMDIxMDMw
+NzA4MTExMC1mMjE3NjBjNDlhOGQgLy8gaW5kaXJlY3QKCWdpdGh1Yi5jb20v
+YXZhc3QvcmV0cnktZ28vdjQgdjQuMC4zIC8vIGluZGlyZWN0CglnaXRodWIu
+Y29tL2RlY3JlZC9kY3JkL2RjcmVjL3NlY3AyNTZrMS92NCB2NC4wLjEgLy8g
+aW5kaXJlY3QKCWdpdGh1Yi5jb20vZ28tbG9nci9sb2dyIHYwLjIuMCAvLyBp
+bmRpcmVjdAoJZ2l0aHViLmNvbS9nby1vcGVuYXBpL2Vycm9ycyB2MC4xOS40
+IC8vIGluZGlyZWN0CglnaXRodWIuY29tL2dvLW9wZW5hcGkvc3RyZm10IHYw
+LjE5LjUgLy8gaW5kaXJlY3QKCWdpdGh1Yi5jb20vZ28tc3RhY2svc3RhY2sg
+djEuOC4wIC8vIGluZGlyZWN0CglnaXRodWIuY29tL2dvYndhcy9nbG9iIHYw
+LjIuMyAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9nb2NjeS9nby1qc29uIHYw
+LjkuNCAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9nb2dvL3Byb3RvYnVmIHYx
+LjMuMiAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9nb2xhbmcvZ3JvdXBjYWNo
+ZSB2MC4wLjAtMjAyMDAxMjEwNDUxMzYtOGM5ZjAzYThlNTdlIC8vIGluZGly
+ZWN0CglnaXRodWIuY29tL2dvbGFuZy9wcm90b2J1ZiB2MS41LjIgLy8gaW5k
+aXJlY3QKCWdpdGh1Yi5jb20vZ29sYW5nL3NuYXBweSB2MC4wLjQgLy8gaW5k
+aXJlY3QKCWdpdGh1Yi5jb20vZ29vZ2xlL2dvLWNtcCB2MC41LjcgLy8gaW5k
+aXJlY3QKCWdpdGh1Yi5jb20vZ29vZ2xlL2dvZnV6eiB2MS4xLjAgLy8gaW5k
+aXJlY3QKCWdpdGh1Yi5jb20vZ29vZ2xlL3V1aWQgdjEuMy4wIC8vIGluZGly
+ZWN0CglnaXRodWIuY29tL2dvb2dsZWFwaXMvZ2F4LWdvL3YyIHYyLjEuMSAv
+LyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9ncnBjLWVjb3N5c3RlbS9nby1ncnBj
+LW1pZGRsZXdhcmUgdjEuMy4wIC8vIGluZGlyZWN0CglnaXRodWIuY29tL2dy
+cGMtZWNvc3lzdGVtL2dycGMtZ2F0ZXdheS92MiB2Mi40LjAgLy8gaW5kaXJl
+Y3QKCWdpdGh1Yi5jb20vaHVhbmR1L3hzdHJpbmdzIHYxLjMuMiAvLyBpbmRp
+cmVjdAoJZ2l0aHViLmNvbS9oeWRyb25pY2EvdG9tbCB2MC41LjAgLy8gaW5k
+aXJlY3QKCWdpdGh1Yi5jb20vaWFuY29sZW1hbi9zdHJjYXNlIHYwLjIuMCAv
+LyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9pbWRhcmlvL21lcmdvIHYwLjMuMTIg
+Ly8gaW5kaXJlY3QKCWdpdGh1Yi5jb20vanNvbi1pdGVyYXRvci9nbyB2MS4x
+LjEwIC8vIGluZGlyZWN0CglnaXRodWIuY29tL2xlc3RycmF0LWdvL2JhY2tv
+ZmYvdjIgdjIuMC44IC8vIGluZGlyZWN0CglnaXRodWIuY29tL2xlc3RycmF0
+LWdvL2JsYWNrbWFnaWMgdjEuMC4wIC8vIGluZGlyZWN0CglnaXRodWIuY29t
+L2xlc3RycmF0LWdvL2h0dHBjYyB2MS4wLjAgLy8gaW5kaXJlY3QKCWdpdGh1
+Yi5jb20vbGVzdHJyYXQtZ28vaXRlciB2MS4wLjEgLy8gaW5kaXJlY3QKCWdp
+dGh1Yi5jb20vbGVzdHJyYXQtZ28vand4IHYxLjIuMTggLy8gaW5kaXJlY3QK
+CWdpdGh1Yi5jb20vbGVzdHJyYXQtZ28vb3B0aW9uIHYxLjAuMCAvLyBpbmRp
+cmVjdAoJZ2l0aHViLmNvbS9tYXR0bi9nby1jb2xvcmFibGUgdjAuMS4xMiAv
+LyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9tYXR0bi9nby1pc2F0dHkgdjAuMC4x
+NCAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9tYXR0bi9nby1ydW5ld2lkdGgg
+djAuMC4zIC8vIGluZGlyZWN0CglnaXRodWIuY29tL21pdGNoZWxsaC9jb3B5
+c3RydWN0dXJlIHYxLjIuMCAvLyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9taXRj
+aGVsbGgvbWFwc3RydWN0dXJlIHYxLjQuMSAvLyBpbmRpcmVjdAoJZ2l0aHVi
+LmNvbS9taXRjaGVsbGgvcmVmbGVjdHdhbGsgdjEuMC4yIC8vIGluZGlyZWN0
+CglnaXRodWIuY29tL21vZGVybi1nby9jb25jdXJyZW50IHYwLjAuMC0yMDE4
+MDMwNjAxMjY0NC1iYWNkOWM3ZWYxZGQgLy8gaW5kaXJlY3QKCWdpdGh1Yi5j
+b20vbW9kZXJuLWdvL3JlZmxlY3QyIHYxLjAuMSAvLyBpbmRpcmVjdAoJZ2l0
+aHViLmNvbS9uc3Fpby9nby1uc3EgdjEuMS4wIC8vIGluZGlyZWN0CglnaXRo
+dWIuY29tL29rdGEvb2t0YS1qd3QtdmVyaWZpZXItZ29sYW5nIHYxLjEuMSAv
+LyBpbmRpcmVjdAoJZ2l0aHViLmNvbS9vcGVudHJhY2luZy1jb250cmliL2dv
+LXN0ZGxpYiB2MS4wLjAgLy8gaW5kaXJlY3QKCWdpdGh1Yi5jb20vb3BlbnRy
+YWNpbmcvb3BlbnRyYWNpbmctZ28gdjEuMi4wIC8vIGluZGlyZWN0CglnaXRo
+dWIuY29tL3BhdHJpY2ttbi9nby1jYWNoZSB2Mi4xLjEtMC4yMDE4MDgxNTA1
+MzEyNy01NjMzZTA4NjI2MjcraW5jb21wYXRpYmxlIC8vIGluZGlyZWN0Cgln
+aXRodWIuY29tL3BjZWx2bmcvZ28tY29uZmlnIHYwLjYuMCAvLyBpbmRpcmVj
+dAoJZ2l0aHViLmNvbS9wa2cvZXJyb3JzIHYwLjkuMSAvLyBpbmRpcmVjdAoJ
+Z2l0aHViLmNvbS9yb2JmaWcvY3Jvbi92MyB2My4wLjAgLy8gaW5kaXJlY3QK
+CWdpdGh1Yi5jb20vdWJlci9qYWVnZXItY2xpZW50LWdvIHYyLjMwLjAraW5j
+b21wYXRpYmxlIC8vIGluZGlyZWN0CglnaXRodWIuY29tL3ViZXIvamFlZ2Vy
+LWxpYiB2Mi40LjEraW5jb21wYXRpYmxlIC8vIGluZGlyZWN0Cglnby5tb25n
+b2RiLm9yZy9tb25nby1kcml2ZXIgdjEuMy4yIC8vIGluZGlyZWN0Cglnby5v
+cGVuY2Vuc3VzLmlvIHYwLjIzLjAgLy8gaW5kaXJlY3QKCWdvLnViZXIub3Jn
+L2F0b21pYyB2MS45LjAgLy8gaW5kaXJlY3QKCWdvbGFuZy5vcmcveC9jcnlw
+dG8gdjAuMC4wLTIwMjIwMjE0MjAwNzAyLTg2MzQxODg2ZTI5MiAvLyBpbmRp
+cmVjdAoJZ29sYW5nLm9yZy94L21vZCB2MC41LjAgLy8gaW5kaXJlY3QKCWdv
+bGFuZy5vcmcveC9uZXQgdjAuMC4wLTIwMjIwNjA3MDIwMjUxLWM2OTBkZGUw
+MDAxZCAvLyBpbmRpcmVjdAoJZ29sYW5nLm9yZy94L29hdXRoMiB2MC4wLjAt
+MjAyMTExMDQxODA0MTUtZDNlZDBiYjI0NmM4IC8vIGluZGlyZWN0Cglnb2xh
+bmcub3JnL3gvc3lzIHYwLjAuMC0yMDIyMDYwODE2NDI1MC02MzViOGM5Yjdm
+NjggLy8gaW5kaXJlY3QKCWdvbGFuZy5vcmcveC90ZXh0IHYwLjMuNyAvLyBp
+bmRpcmVjdAoJZ29sYW5nLm9yZy94L3hlcnJvcnMgdjAuMC4wLTIwMjAwODA0
+MTg0MTAxLTVlYzk5ZjgzYWZmMSAvLyBpbmRpcmVjdAoJZ29vZ2xlLmdvbGFu
+Zy5vcmcvYXBpIHYwLjY4LjAgLy8gaW5kaXJlY3QKCWdvb2dsZS5nb2xhbmcu
+b3JnL2FwcGVuZ2luZSB2MS42LjcgLy8gaW5kaXJlY3QKCWdvb2dsZS5nb2xh
+bmcub3JnL2dlbnByb3RvIHYwLjAuMC0yMDIyMDIwNDAwMjQ0MS1kNmNjM2Nj
+MDc3MGUgLy8gaW5kaXJlY3QKCWdvb2dsZS5nb2xhbmcub3JnL2dycGMgdjEu
+NDMuMCAvLyBpbmRpcmVjdAoJZ29vZ2xlLmdvbGFuZy5vcmcvcHJvdG9idWYg
+djEuMjguMCAvLyBpbmRpcmVjdAoJZ29wa2cuaW4vaW5mLnYwIHYwLjkuMSAv
+LyBpbmRpcmVjdAoJZ29wa2cuaW4vc3F1YXJlL2dvLWpvc2UudjIgdjIuNi4w
+IC8vIGluZGlyZWN0Cglnb3BrZy5pbi95YW1sLnYyIHYyLjQuMCAvLyBpbmRp
+cmVjdAoJazhzLmlvL2FwaSB2MC4yMC42IC8vIGluZGlyZWN0CglrOHMuaW8v
+YXBpbWFjaGluZXJ5IHYwLjIwLjYgLy8gaW5kaXJlY3QKCWs4cy5pby9rbG9n
+L3YyIHYyLjQuMCAvLyBpbmRpcmVjdAoJc2lncy5rOHMuaW8vc3RydWN0dXJl
+ZC1tZXJnZS1kaWZmL3Y0IHY0LjAuMyAvLyBpbmRpcmVjdAoJc2lncy5rOHMu
+aW8veWFtbCB2MS4yLjEtMC4yMDIxMDEyODE0NTUzNC0xMWU0M2Q0YThiOTIg
+Ly8gaW5kaXJlY3QKCXdlYXZlbGFiLnh5ei9kZXZ4IHYwLjAuMC0yMDIyMDYx
+MDA1MzIxNy0zMTZhY2Y1NGI4NmUgLy8gaW5kaXJlY3QKCXdlYXZlbGFiLnh5
+ei9zY2hlbWEtZ2VuLWdvIHYwLjAuMTUxIC8vIGluZGlyZWN0Cgl3ZWF2ZWxh
+Yi54eXovd2FtbCB2MC4wLjAtMjAyMjA2MTAwNTA2MDctOGMwMWQxMjEwOWNj
+IC8vIGluZGlyZWN0Cgl3ZWF2ZWxhYi54eXovd2xvZ2QgdjAuMC4wLTIwMjIw
+NDA3MTkyNjQzLTg3YmU3YWJiZmM2YSAvLyBpbmRpcmVjdAoJd2VhdmVsYWIu
+eHl6L3h5YW1sIHYwLjAuMC0yMDIxMTIwNzE5NDIzMS1kZDU0MzZjMzg0ODEg
+Ly8gaW5kaXJlY3QKKQo=
